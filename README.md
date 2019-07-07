@@ -2,7 +2,7 @@
 
 Example of how to take data from a MSSQL database and transfer that data to a SQLite database.
 I used [*BD Browser for Sqlite*](https://sqlitebrowser.org/dl/) to create the sqlite database and manipulate data/tables.
-
+There is a portable version of the tool which is what I used.
 
 The MSSQL and SQLite Databases have the same schema.
 
@@ -52,11 +52,3 @@ AppDomain.CurrentDomain.SetData("DataDirectory", path);
 ```
 
 Instead the sqlite file is in the same directory as the code, my preference/opinion.
-
-
-
-
-
-
-
-
