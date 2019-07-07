@@ -11,8 +11,10 @@ namespace Example
     {
         static void Main(string[] args)
         {
+            setDataDirectoryPath();
+
             List<main_table> mainTableData = getMainTableData();
-            using (var sqliteDbContext = new Model1("sqlite"))
+            using (var sqliteDbContext = new Model1("sqliteRelativePath"))
             {
                 var mainTableDataToSave = sqliteDbContext.main_table.Create();
                 mainTableDataToSave = mainTableData[0];
@@ -20,6 +22,14 @@ namespace Example
                 sqliteDbContext.SaveChanges();
             }
             int a = 0;
+        }
+
+        private static void setDataDirectoryPath()
+        {
+            string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string path = (System.IO.Path.GetDirectoryName(executable));
+            path = path.Replace(@"\bin\Debug", "");
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
         }
 
         private static List<main_table> getMainTableData()
