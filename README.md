@@ -1,6 +1,8 @@
 # MSSQLAndSQLiteEntityFrameworkExample
 
 Example of how to take data from a MSSQL database and transfer that data to a SQLite database.
+I used [*BD Browser for Sqlite*](https://sqlitebrowser.org/dl/) to create the sqlite database and manipulate data/tables.
+
 
 The MSSQL and SQLite Databases have the same schema.
 
